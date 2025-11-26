@@ -9,11 +9,11 @@ import PumpkinLogoCutted from "@/components/PumpkinLogoCutted.astro"
 ---
 
 <Layout>
-  <div id="logo-mask" class="fixed top-0 left-0 w-full h-screen z-0">
-    <section class="w-full h-full">
+  <div id="logo-mask" class="fixed top-0 w-full h-screen">
+    <section>
       <picture
         id="hero-key"
-        class="h-screen scale-110 sm:scale-115 md:scale-125 block overflow-hidden w-full h-full"
+        class="h-screen scale-110 sm:scale-115 md:scale-125 block overflow-hidden fixed"
       >
         <img
           id="hero-key-logo"
@@ -34,7 +34,7 @@ import PumpkinLogoCutted from "@/components/PumpkinLogoCutted.astro"
   </div>
 
   <div
-    class="fixed flex flex-col items-center justify-between h-screen px-4 sm:px-8 md:px-20 py-8 sm:py-12 md:py-16 w-full z-10"
+    class="fixed flex flex-col items-center justify-between h-screen px-4 sm:px-8 md:px-20 py-8 sm:py-12 md:py-16 w-full"
   >
     <header class="flex justify-between w-full">
       <PumpkinLogo
@@ -65,21 +65,14 @@ import PumpkinLogoCutted from "@/components/PumpkinLogoCutted.astro"
 <style>
   #logo-mask {
     background: white;
-    mask-image: url("/pumpkin-logo.png");
+    mask-image: url("/logo-stack.svg");
     mask-position: center 25%;
     mask-repeat: no-repeat;
     mask-size: clamp(5000vh, 3500%, 0vh);
-    mask-mode: alpha;
-    -webkit-mask-image: url("/pumpkin-logo.png");
+    -webkit-mask-image: url("/logo-stack.svg");
     -webkit-mask-position: center 25%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: clamp(5000vh, 3500%, 0vh);
-    -webkit-mask-mode: alpha;
-    pointer-events: none;
-  }
-
-  #logo-mask section {
-    pointer-events: none;
   }
 
   @media (max-width: 768px) {
