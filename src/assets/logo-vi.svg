@@ -1,1 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" class="_1o5pgyxd _1o5pgyxe _1n4m2yu0" viewBox="0 0 46 35"><path fill="currentColor" d="M46.2661.8008H34.7236v33.6h11.5425v-33.6ZM33.9162.8008l-16.5804 33.6L.7768.8008H12.314l5.0193 10.7437L22.3766.8008h11.5396ZM46.9194 1.4394c.0862 0 .1294.0355.1294.1064 0 .0592-.0333.093-.0999.1013l.1084.1644h-.0634l-.1034-.16h-.0625v.16h-.059v-.372h.1504Zm-.0235.1652c.0358 0 .0606-.0046.0739-.014.0133-.0093.02-.025.02-.0472 0-.038-.0267-.0571-.0799-.0571h-.0817v.1183h.0677Z"/><path fill="currentColor" d="M46.8961 1.9478c-.1807 0-.3277-.1442-.3277-.3216 0-.1773.147-.3215.3277-.3215.1808 0 .3278.1442.3278.3215s-.147.3216-.3278.3216Zm0-.5927c-.1524 0-.2765.1216-.2765.2713 0 .1496.124.2713.2765.2713.1526 0 .2766-.1217.2766-.2713 0-.1497-.124-.2713-.2766-.2713Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+  <!-- Tallo -->
+  <path d="M50 5 C48 3, 46 4, 45 6 L45 8 C45 10, 47 12, 50 12 C53 12, 55 10, 55 8 L55 6 C54 4, 52 3, 50 5 Z" fill="currentColor"/>
+  
+  <!-- Mitad superior - Segmentos tradicionales -->
+  <path d="M50 12 Q45 15, 40 25 Q35 35, 32 45 Q30 50, 30 55" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <path d="M50 12 Q48 15, 46 25 Q44 35, 43 45 Q42 50, 42 55" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <path d="M50 12 Q52 15, 54 25 Q56 35, 57 45 Q58 50, 58 55" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <path d="M50 12 Q55 15, 60 25 Q65 35, 68 45 Q70 50, 70 55" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  
+  <!-- Cuerpo de la calabaza - Mitad superior -->
+  <ellipse cx="50" cy="55" rx="40" ry="25" fill="currentColor" opacity="0.95"/>
+  
+  <!-- Patrón hexagonal - Mitad inferior -->
+  <!-- Hexágono central -->
+  <path d="M50 60 L55 63 L55 68 L50 71 L45 68 L45 63 Z" fill="currentColor" opacity="0.9"/>
+  
+  <!-- Hexágonos laterales izquierdos -->
+  <path d="M35 65 L40 68 L40 73 L35 76 L30 73 L30 68 Z" fill="currentColor" opacity="0.9"/>
+  <path d="M30 75 L35 78 L35 83 L30 86 L25 83 L25 78 Z" fill="currentColor" opacity="0.9"/>
+  
+  <!-- Hexágonos laterales derechos -->
+  <path d="M65 65 L70 68 L70 73 L65 76 L60 73 L60 68 Z" fill="currentColor" opacity="0.9"/>
+  <path d="M70 75 L75 78 L75 83 L70 86 L65 83 L65 78 Z" fill="currentColor" opacity="0.9"/>
+  
+  <!-- Hexágonos inferiores -->
+  <path d="M42 75 L47 78 L47 83 L42 86 L37 83 L37 78 Z" fill="currentColor" opacity="0.9"/>
+  <path d="M58 75 L63 78 L63 83 L58 86 L53 83 L53 78 Z" fill="currentColor" opacity="0.9"/>
+  
+  <!-- Hexágono inferior central -->
+  <path d="M46 85 L51 88 L51 93 L46 96 L41 93 L41 88 Z" fill="currentColor" opacity="0.9"/>
+  <path d="M54 85 L59 88 L59 93 L54 96 L49 93 L49 88 Z" fill="currentColor" opacity="0.9"/>
+  
+  <!-- Mitad inferior - Base de la calabaza -->
+  <ellipse cx="50" cy="90" rx="38" ry="20" fill="currentColor" opacity="0.85"/>
+</svg>
