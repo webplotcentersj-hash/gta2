@@ -3,8 +3,9 @@ import Layout from "@/layouts/Layout.astro"
 
 import HeroKeyLogo from "@/assets/hero-key-logo.webp"
 import HeroKeyBackground from "@/assets/hero-key-background.webp"
-import PumpkinLogo from "@/assets/PUMPKIN-ALONE_ORANGE.png"
+import LogoVI from "@/assets/logo-vi.svg"
 import PlayButtonIcon from "@/assets/play-button.svg"
+import LogoCutted from "@/assets/logo-cutted.svg"
 ---
 
 <Layout>
@@ -12,16 +13,20 @@ import PlayButtonIcon from "@/assets/play-button.svg"
     <section>
       <picture
         id="hero-key"
-        class="h-screen scale-125 block overflow-hidden fixed"
+        class="h-screen scale-110 sm:scale-115 md:scale-125 block overflow-hidden fixed"
       >
         <img
           id="hero-key-logo"
           src={HeroKeyLogo.src}
+          alt=""
+          loading="eager"
           class="absolute w-full h-full object-cover"
         />
         <img
           id="hero-key-background"
           src={HeroKeyBackground.src}
+          alt=""
+          loading="eager"
           class="w-full h-full object-cover"
         />
       </picture>
@@ -29,31 +34,27 @@ import PlayButtonIcon from "@/assets/play-button.svg"
   </div>
 
   <div
-    class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full"
+    class="fixed flex flex-col items-center justify-between h-screen px-4 sm:px-8 md:px-20 py-8 sm:py-12 md:py-16 w-full"
   >
     <header class="flex justify-between w-full">
-      <img
-        src={PumpkinLogo.src}
-        alt="Logo"
-        class="size-11 object-contain hover:opacity-80 transition-opacity duration-500 cursor-pointer"
+      <LogoVI
+        class="size-8 sm:size-10 md:size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
       />
     </header>
 
     <button class="absolute inset-0 m-auto cursor-pointer inline-block">
       <PlayButtonIcon
         id="hero-play-button"
-        class="text-white m-auto size-32 mt-10 backdrop-blur-3xl rounded-full hover:scale-110 transition-transform duration-500"
+        class="text-white m-auto size-20 sm:size-24 md:size-32 mt-10 backdrop-blur-3xl rounded-full hover:scale-110 transition-transform duration-500"
       />
     </button>
 
-    <footer id="hero-footer" class="absolute bottom-8 m-auto">
-      <img
-        src={PumpkinLogo.src}
-        alt="Logo"
-        class="w-38 h-auto drop-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000]"
+    <footer id="hero-footer" class="absolute bottom-4 sm:bottom-6 md:bottom-8 m-auto">
+      <LogoCutted
+        class="text-white w-24 sm:w-32 md:w-38 drop-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000]"
       />
       <span
-        class="absolute uppercase tracking-[6px] whitespace-nowrap text-center top-[49px] font-medium text-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2 text-lg"
+        class="absolute uppercase tracking-[3px] sm:tracking-[4px] md:tracking-[6px] whitespace-nowrap text-center top-[35px] sm:top-[42px] md:top-[49px] font-medium text-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-lg"
       >
         Ver el Tráiler 2
       </span>
@@ -64,10 +65,21 @@ import PlayButtonIcon from "@/assets/play-button.svg"
 <style>
   #logo-mask {
     background: white;
-    mask-image: url("/pumpkin-logo.png");
+    mask-image: url("/logo-stack.svg");
     mask-position: center 25%;
     mask-repeat: no-repeat;
     mask-size: clamp(5000vh, 3500%, 0vh);
+    -webkit-mask-image: url("/logo-stack.svg");
+    -webkit-mask-position: center 25%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: clamp(5000vh, 3500%, 0vh);
+  }
+
+  @media (max-width: 768px) {
+    #logo-mask {
+      mask-size: clamp(3000vh, 2500%, 0vh);
+      -webkit-mask-size: clamp(3000vh, 2500%, 0vh);
+    }
   }
 </style>
 
@@ -77,10 +89,16 @@ import PlayButtonIcon from "@/assets/play-button.svg"
 
   gsap.registerPlugin(ScrollTrigger)
 
+  // Optimización para móvil: reducir animaciones si es dispositivo móvil
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768
+  const scrubValue = isMobile ? 0.5 : 1
+
   const tl = gsap.timeline({
     ease: "power2.out",
     scrollTrigger: {
-      scrub: 1,
+      scrub: scrubValue,
+      start: "top top",
+      end: "bottom top",
     },
   })
 
@@ -91,7 +109,7 @@ import PlayButtonIcon from "@/assets/play-button.svg"
     .to(
       "#logo-mask",
       {
-        maskSize: "clamp(20vh, 25%, 30vh)",
+        maskSize: isMobile ? "clamp(15vh, 20%, 25vh)" : "clamp(20vh, 25%, 30vh)",
       },
       0.15
     )

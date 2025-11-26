@@ -6,14 +6,19 @@ import KeepScrolling from "@/assets/keep-scrolling.svg"
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta name="description" content="Landing page de GTA VI" />
+    <meta name="theme-color" content="#111" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/gta-regular.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/gta-bold.woff" as="font" type="font/woff" crossorigin="anonymous" />
     <title>Landing GTA VI by @midudev</title>
   </head>
   <body>
     <slot />
     <KeepScrolling
-      class="fixed bottom-3 right-0 left-0 mx-auto text-pink-300 drop-shadow-2xl animate-bounce-pulse"
+      class="fixed bottom-3 right-0 left-0 mx-auto text-pink-300 drop-shadow-2xl animate-bounce-pulse hidden sm:block"
     />
   </body>
 </html>
@@ -57,6 +62,16 @@ import KeepScrolling from "@/assets/keep-scrolling.svg"
     color: white;
     margin: 0;
     width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (max-width: 768px) {
+    html,
+    body {
+      height: 200vh;
+    }
   }
 
   @font-face {
