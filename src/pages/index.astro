@@ -3,9 +3,7 @@ import Layout from "@/layouts/Layout.astro"
 
 import HeroKeyLogo from "@/assets/hero-key-logo.webp"
 import HeroKeyBackground from "@/assets/hero-key-background.webp"
-import LogoVI from "@/assets/logo-vi.svg"
 import PlayButtonIcon from "@/assets/play-button.svg"
-import LogoCutted from "@/assets/logo-cutted.svg"
 import PumpkinLogo from "@/components/PumpkinLogo.astro"
 import PumpkinLogoCutted from "@/components/PumpkinLogoCutted.astro"
 ---
@@ -66,7 +64,11 @@ import PumpkinLogoCutted from "@/components/PumpkinLogoCutted.astro"
     mask-image: url("/logo-stack.svg");
     mask-position: center 25%;
     mask-repeat: no-repeat;
-    mask-size: clamp(5000vh, 3500%, 0vh);
+    mask-size: clamp(0vh, 3500%, 5000vh);
+    -webkit-mask-image: url("/logo-stack.svg");
+    -webkit-mask-position: center 25%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: clamp(0vh, 3500%, 5000vh);
   }
 </style>
 
